@@ -17,7 +17,8 @@ ISR(USART_RXC_vect)
 int main(void)
 {
     DDRC |= (1 << PINC0) | (1 << PINC1) | (1 << PINC2);     /* Make PORTC as output PORT*/
-    PORTC &= ~((1 << PINC0) | (1 << PINC1) | (1 << PINC2)); // choose first LM35
+    PORTC &= ~((1 << PINC0) | (1 << PINC1)); // choose first LM35
+    PORTC |= ((1 << PINC2)); // enable multiplexer
 
     DDRD |= 1 << PIND5;     /* PIND5(OCR1A) as Output */
     PORTD &= ~(1 << PIND5); /* Make pull up low */
