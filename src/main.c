@@ -118,7 +118,7 @@ ISR(ADC_vect)
         }
         indx += 1;
 
-        _delay_ms(1000);     // start conversion every one seconde
+        _delay_ms(100);     // start conversion every one seconde
         ADCSRA |= 1 << ADSC; // start again conversion to start conversion we high
     }
 }
